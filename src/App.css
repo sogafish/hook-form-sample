@@ -43,8 +43,13 @@
   height: 20px;
 }
 
+.error-text {
+  color: red;
+}
+
 .form {
   padding: 20px;
+  margin: 40px 0;
 }
 
 .form1 {

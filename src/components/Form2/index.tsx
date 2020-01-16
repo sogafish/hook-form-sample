@@ -1,18 +1,32 @@
 import React from 'react';
-import { useForm } from 'react-hook-form'
+import { useForm, Controller, ErrorMessage } from 'react-hook-form';
+import { TextField, Button } from "@material-ui/core";
 
 export default function Form2() {
-  const { register, handleSubmit, watch, errors } = useForm()
-  const onSubmit = (data: any) => { console.log(data) }
+  const { handleSubmit, errors, control } = useForm()
+  const onSubmit = (data: Object) => { alert(JSON.stringify(data)) };
 
   return (
-    <div className="form2">
-      <p>Form2</p>
+    <div className="form form2">
+      <h1>Form2</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input name="example" defaultValue="test" ref={register} />
-        <input name="exampleRequired" ref={register({ required: true })} />
-        <p className="error-text">{errors.exampleRequired && <span>This field is required</span>}</p>
-        <input type="submit" />
+        <Controller
+          as={<TextField />}
+          name="form2_1"
+          control={control}
+          rules={{ required: "必須です" }}
+          defaultValue=""
+        />
+        <div className="errors">
+          <ErrorMessage errors={errors} name="form2_1" />
+        </div>
+        <Controller
+          as={<Button color="primary" ><span>送信</span></Button>}
+          name="submit"
+          control={control}
+          defaultValue=""
+          onClick={handleSubmit(onSubmit)}
+        />
       </form>
     </div>
   )
