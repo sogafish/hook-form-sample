@@ -4,7 +4,7 @@ import { TextField, Button } from "@material-ui/core";
 
 export default function Form2() {
   const { handleSubmit, errors, control } = useForm()
-  const onSubmit = (data: Object) => { alert(JSON.stringify(data)) };
+  const onSubmit = (data: Object) => { console.table(data) };
 
   return (
     <div className="form form2">

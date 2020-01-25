@@ -54,7 +54,7 @@
 
 .form-section {
   margin: 20px auto;
-  width: 220px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 }
@@ -71,6 +71,14 @@
 
 .form2 {
   background-color:#f6f0e6;
+}
+
+.form3 {
+  background-color: #deadaf;
+}
+
+.form4 {
+  background-color: #e8e8e8;
 }
 
 .sub-text {
